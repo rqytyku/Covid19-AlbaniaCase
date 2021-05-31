@@ -3,7 +3,7 @@ package com.example.covid19_albaniacase;
 public class ZonaData {
     public  static final String[] countryNames = {
 
-            "Alb", "USA", "IT", "IND", "MX"
+            "Alb", "UK", "IT", "IND", "MX"
     };
 
     public  static final int[] countryFlag = {

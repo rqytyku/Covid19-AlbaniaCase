@@ -11,7 +11,7 @@ import android.os.Bundle;
 
 
 public class MainActivity extends AppCompatActivity {
-
+//deklarimi i variableve
     Button b1,b2;
     EditText ed1,ed2;
     TextView tx1;
@@ -21,6 +21,7 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+        //kalimi i vendodhjes se widgets tek variablave te mesiperme
         b1 = (Button)findViewById(R.id.button);
         ed1 = (EditText)findViewById(R.id.editText);
         ed2 = (EditText)findViewById(R.id.editText2);
@@ -32,16 +33,17 @@ public class MainActivity extends AppCompatActivity {
         b1.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                //vendosim kodin tone qe do egzekutohet kur klikohet butoni login
+                //vendosim kodin tone qe do ekzekutohet kur klikohet butoni login
                 if(ed1.getText().toString().equals("admin") &&
                         ed2.getText().toString().equals("password")) {
                     Toast.makeText(getApplicationContext(),
                             "Redirecting...",Toast.LENGTH_SHORT).show();
-
+                    // therritja e metodes te deklaruar me poshte, e cila kalon ne ekranin pasardhes
                     hapEkranin2Romela();
 
                 }else{
-                    Toast.makeText(getApplicationContext(), "keni futur username dhe/ose passwordin gabim",Toast.LENGTH_SHORT).show();
+                    //Toast qe sherben per daljen e "pop up ose modal" me mesazhin e meposhtem
+                    Toast.makeText(getApplicationContext(), "Keni futur username dhe/ose passwordin gabim",Toast.LENGTH_SHORT).show();
 
                     tx1.setVisibility(View.VISIBLE);
                     tx1.setBackgroundColor(Color.RED);
@@ -65,14 +67,14 @@ public class MainActivity extends AppCompatActivity {
 
 
     }
-
+// metode e cila do te sherbej per tu loguar dhe kaluar ne ekranin tjeter, perkatesisht Ekrani2
     private void hapEkranin2Romela() {
         Intent i = new Intent(MainActivity.this, Ekrani2.class);
         String user = ed1.getText().toString();
         String password = ed2.getText().toString();
         i.putExtra("Username", user);
         i.putExtra("Password", password);
-        i.putExtra("KeyShembull3", "Stay Safe!");
+        i.putExtra("Keshilla:", "Stay Safe!");
         startActivity(i);
     }
 }

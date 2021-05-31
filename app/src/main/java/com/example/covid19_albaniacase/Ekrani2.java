@@ -38,7 +38,7 @@ public class Ekrani2 extends AppCompatActivity {
         // get data via the key
         String emri = extras.getString("Username");
         String pass = extras.getString("Password");
-        String str3 = extras.getString("KeyShembull3");
+        String str3 = extras.getString("Keshilla:");
 
         if (emri != null) {
             // do something with the data
@@ -47,18 +47,18 @@ public class Ekrani2 extends AppCompatActivity {
             Toast shfaqEmrin = Toast.makeText(this, " Pershendetje " + emri , LENGTH_SHORT);
             shfaqEmrin.setGravity(Gravity.CENTER,0,-300);
             shfaqEmrin.show();
-            prsh.setText("Pershendetje z. /znj. : " + emri +"\nPasswordi juaj eshte: " + pass + "\nStringu shtese:" +str3);
+            prsh.setText("Pershendetje z. /znj. : " + emri +"\nPasswordi juaj eshte: " + pass + "\n Keshilla:" +str3);
 
         }
 
         kthehu.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                //therrasim me toden qe do egzekutohet me klikimin e butonit... shkojme tek ekrani 1
+                //therrasim metoden qe do ekzekutohet me klikimin e butonit... shkojme tek ekrani 1
                 hapEkranin1();
             }
         });
-
+       //ketu fo therritet metoda RomelaCovid qe do sherbeje per te hapur ekranin Covid19
         CovidRom.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -83,7 +83,6 @@ public class Ekrani2 extends AppCompatActivity {
 
     private void GameOver() {
         AlertDialog.Builder alertDialog = new AlertDialog.Builder(this);
-        // alertDialog.setMessage(R.string.humbe)
         alertDialog.setMessage("A doni te vazhdoni ne ekranin 2?")
                 .setCancelable(false)
                 .setPositiveButton("Vazhdo", new DialogInterface.OnClickListener() {
