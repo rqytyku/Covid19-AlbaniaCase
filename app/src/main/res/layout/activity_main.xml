@@ -8,7 +8,7 @@
                 android:paddingBottom = "5dp"
                 tools:context = ".MainActivity">
 
-    <TextView android:text = "Miresevjen"
+    <TextView android:text = "@string/miresevjen"
               android:layout_width="wrap_content"
               android:layout_height = "wrap_content"
               android:id = "@+id/textview"

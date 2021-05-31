@@ -27,6 +27,7 @@ public class Ekrani2 extends AppCompatActivity {
         setContentView(R.layout.activity_ekrani2);
         Button kthehu = (Button) findViewById(R.id.button3);
         Button CovidRom = (Button) findViewById(R.id.button4);
+        Button bInterneti = (Button) findViewById(R.id.button6);
         TextView prsh = (TextView) findViewById(R.id.textView5);
         prsh.setText("");
 
@@ -66,9 +67,35 @@ public class Ekrani2 extends AppCompatActivity {
                 ;
             }
         });
+        bInterneti.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+                Intent i = new Intent(Intent.ACTION_VIEW, Uri.parse("http://www.ishp.gov.al/covid-19-ne-shqiperi/"));
+                if(isIntentAvailable(getApplicationContext(), i)){
+                    Toast.makeText(getApplicationContext(), "Ka program qe hap internetin" , Toast.LENGTH_SHORT).show();
+                    startActivity(i);
+
+                }else{
+
+                    Toast.makeText(getApplicationContext(), "Nuk ka program" , Toast.LENGTH_SHORT).show();
+                }
+
+
+            }
+        });
+        //intent implicit
+
 
         GameOver();
 
+    }
+    public static boolean isIntentAvailable(Context ctx, Intent intent) {
+        final PackageManager mgr = ctx.getPackageManager();
+        List<ResolveInfo> list =
+                mgr.queryIntentActivities(intent,
+                        PackageManager.MATCH_DEFAULT_ONLY);
+        return list.size() > 0;
     }
 
     //intent explicit

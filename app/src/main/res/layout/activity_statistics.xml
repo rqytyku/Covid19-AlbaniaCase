@@ -33,7 +33,7 @@
                     android:layout_marginStart="8dp"
                     android:layout_marginTop="16dp"
                     android:fontFamily="@font/graphikmedium"
-                    android:text="Gjendje kritike"
+                    android:text="@string/gjendje_kritike"
                     android:textColor="#FFFFFF"
                     android:textSize="12sp"
                     app:layout_constraintStart_toStartOf="parent"
